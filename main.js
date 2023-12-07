@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const plane = new THREE.Mesh(geometry, material);
     plane.rotation.x = 0;
     plane.position.y = 0.7;
-    plane.scale.multiplyScalar(4);
+    plane.scale.multiplyScalar(1);
 
     const anchor = mindarThree.addAnchor(0);
     anchor.group.add(plane);
