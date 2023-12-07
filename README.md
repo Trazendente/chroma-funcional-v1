@@ -1,1 +1,1 @@
-# chroma-funcional-v1
+# mind-v2-course
