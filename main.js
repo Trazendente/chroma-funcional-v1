@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const plane = new THREE.Mesh(geometry, material);
       plane.rotation.x = 0;
       plane.position.copy(videoData.position);  // Copia la posición desde la estructura de datos
-      plane.scale.multiplyScalar(1);
+      plane.scale.multiplyScalar(.6);
 
       const anchor = mindarThree.addAnchor(0);
       anchor.group.add(plane);
