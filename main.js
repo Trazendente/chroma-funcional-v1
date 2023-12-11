@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       container: document.body,
       imageTargetSrc:
         "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/target-cr.mind?v=1701976017267",
+    
     });
 
     const { renderer, scene, camera } = mindarThree;
@@ -26,30 +27,37 @@ document.addEventListener("DOMContentLoaded", () => {
     audio.setRefDistance(100);
     // Ajustar el volumen
     audio.setVolume(9.0);
+    
+    const startButton = document.getElementById("startButton");
+    const infoText = document.getElementById("infoText");
+
+    // Oculta o elimina el botón y el texto después de iniciar
+    startButton.style.display = "none";
+    infoText.style.display = "none";
 
     const videosData = [
       {
-        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/AR_CR_PLANO_00-converted.mp4?v=1702302179156",
+        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/Ar%20Cr%20Plano%2000-MAIN.mp4?v=1702332451877",
         position: new THREE.Vector3(0, 0, 0),
       },
       {
-        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/AR_CR_PLANO_01-converted.mp4?v=1702302200412",
+        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/Ar%20Cr%20Plano%2001-MAIN.mp4?v=1702332455111",
         position: new THREE.Vector3(0, 0, 0.1),
       },
       {
-        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/AR_CR_PLANO_02-converted.mp4?v=1702302210504",
+        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/Ar%20Cr%20Plano%2002-MAIN.mp4?v=1702332455784",
         position: new THREE.Vector3(0, 0, 0.2),
       },
       {
-        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/AR_CR_PLANO_03-converted.mp4?v=1702302218360",
+        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/Ar%20Cr%20Plano%2003-MAIN.mp4?v=1702332456514",
         position: new THREE.Vector3(0, 0, 0.3),
       },
       {
-        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/AR_CR_PLANO_04-converted.mp4?v=1702302238560",
+        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/Ar%20Cr%20Plano%2004-MAIN.mp4?v=1702332457314",
         position: new THREE.Vector3(0, 0, 0.4),
       },
       {
-        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/AR_CR_PLANO_05-converted.mp4?v=1702302248596",
+        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/Ar%20Cr%20Plano%2005-MAIN.mp4?v=1702332458527",
         position: new THREE.Vector3(0, 0, 0.5),
       },
     ];
@@ -94,7 +102,13 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const startButton = document.createElement("button");
-  startButton.textContent = "Start";
+  startButton.textContent = "Empezar AR";
+  startButton.id = "startButton";
   startButton.addEventListener("click", start);
   document.body.appendChild(startButton);
+
+  const infoText = document.createElement("p");
+  infoText.textContent = "Presiona 'Start' para empezar";
+  infoText.id = "infoText";
+  document.body.appendChild(infoText);
 });
