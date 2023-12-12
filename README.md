@@ -1,1 +1,1 @@
-# mind-v2-course
+# cre-ar-v2
