@@ -1,4 +1,3 @@
-// main.js
 import { loadVideo } from "./loader.js";
 import { loadAudio } from "./loader.js";
 import { createChromaMaterial } from "./chroma-video.js";
@@ -25,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const audio = new THREE.PositionalAudio(listener);
     audio.setBuffer(audioClip);
     audio.setRefDistance(100);
-    // Ajustar el volumen
+    // Volumen
     audio.setVolume(9.0);
     
     const startButton = document.getElementById("startButton");
@@ -108,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.appendChild(startButton);
 
   const infoText = document.createElement("p");
-  infoText.textContent = "Presiona 'Start' para empezar";
+  infoText.textContent = "Presiona 'Empezar AR' para comenzar";
   infoText.id = "infoText";
   document.body.appendChild(infoText);
 });

@@ -1,16 +1,6 @@
-import {GLTFLoader} from "./GLTFLoader.js";
 import * as THREE from "./three.module.js";
 
 //const THREE = window.MINDAR.IMAGE ? window.MINDAR.IMAGE.THREE : window.MINDAR.FACE.THREE;
-
-export const loadGLTF = (path) => {
-  return new Promise((resolve, reject) => {
-    const loader = new GLTFLoader();
-    loader.load(path, (gltf) => {
-      resolve(gltf);
-    });
-  });
-}
 
 export const loadAudio = (path) => {
   return new Promise((resolve, reject) => {
@@ -24,7 +14,7 @@ export const loadAudio = (path) => {
 export const loadVideo = async (url) => {
   return new Promise((resolve, reject) => {
     const video = document.createElement("video");
-    video.crossOrigin = "anonymous";  // Configurar el atributo crossorigin
+    video.crossOrigin = "anonymous"; 
     video.addEventListener('loadedmetadata', () => {
       video.setAttribute('playsinline', '');
       resolve(new THREE.VideoTexture(video));
